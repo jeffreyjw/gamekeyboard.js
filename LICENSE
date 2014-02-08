@@ -1,39 +1,3 @@
-gamekeyboard.js
-===
-
-A JavaScript Library
-
-### Maintainer
-
-[Jeffrey](https://github.com/jeffreyjw)
-
-### Get Started
-
-Install dependencies
-
-`sudo npm install && bower install`
-
-Build Project
-
-`grunt`
-
-Run Tests
-
-Open `SpecRunner.html` in your browser and test with jasmine
-
-### How to use
-
-
-```javascript
-//Get Version
-yourLibrary.version;
-
-//say Hello World
-yourLibrary.hello();
-```
-
-### License
-
 The MIT License (MIT)
 
 Copyright (c) 2013 yourName
