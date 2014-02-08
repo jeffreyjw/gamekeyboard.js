@@ -1,7 +1,7 @@
 gamekeyboard.js
 ===
 
-A JavaScript Library
+A small library to handle cross browser keyboard input, especially in games.
 
 ### Maintainer
 
@@ -9,34 +9,61 @@ A JavaScript Library
 
 ### Get Started
 
-Install dependencies
+Download and include the library in your application:
 
-`sudo npm install && bower install`
+```
+<script src="gamekeyboard.min.js"></script>
+```
 
-Build Project
-
-`grunt`
-
-Run Tests
-
-Open `SpecRunner.html` in your browser and test with jasmine
+You can also test the library in tests/test0/index.html
 
 ### How to use
 
+First, instantiate a Keyboard:
 
 ```javascript
-//Get Version
-yourLibrary.version;
+var keyboard = new GAMEKBD.Keyboard();
+```
 
-//say Hello World
-yourLibrary.hello();
+Then, in your game loop, add an update call - it should be called once per frame
+
+```javascript
+keyboard.update();
+```
+
+Now you can check the keys!
+
+```javascript
+// check if key A was just pressed
+if (keyboard.isKeyPressed(GAMEKBD.Keys.KEY_A))
+{
+    //...
+}
+
+// check if space was just released
+if (keyboard.isKeyReleased(GAMEKBD.Keys.SPACE))
+{
+    //...
+}
+
+// check if left arrow is down
+if (keyboard.isKeyDown(GAMEKBD.Keys.ARROW_LEFT))
+{
+    //...
+}
+
+// check if key ESCAPE is up
+if (keyboard.isKeyUp(GAMEKBD.Keys.ESCAPE))
+{
+    //...
+}
 ```
 
 ### License
 
 The MIT License (MIT)
 
-Copyright (c) 2013 yourName
+Copyright (c) 2013 Jeffrey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
