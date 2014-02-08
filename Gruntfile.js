@@ -39,7 +39,9 @@ module.exports = function(grunt) {
                 bare: true
               },
               files: {
-                "<%= dirs.js %>/yourLibrary.js" : "<%= dirs.coffee %>/yourLibrary.coffee"
+                "<%= dirs.js %>/main.js" : "<%= dirs.coffee %>/main.coffee",
+                "<%= dirs.js %>/keyboard.js" : "<%= dirs.coffee %>/keyboard.coffee",
+                "<%= dirs.js %>/keys.js" : "<%= dirs.coffee %>/keys.coffee"
               }
             }
         },
@@ -52,7 +54,11 @@ module.exports = function(grunt) {
             },
             dist: {
               files: {
-                  "<%= dirs.build %>/yourLibrary.min.js": "<%= dirs.js %>/yourLibrary.js"
+                  "<%= dirs.build %>/gamekeyboard.min.js": [
+                      "<%= dirs.js %>/main.js",
+                      "<%= dirs.js %>/keyboard.js",
+                      "<%= dirs.js %>/keys.js"
+                  ]
               }
             }
         },
