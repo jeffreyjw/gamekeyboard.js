@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard test</title>
+</head>
+<body>
+    <div>Try pressing keys</div>
+    <div id="console">
+        <br/>
+    </div>
+
+    <script src="../../dist/gamekeyboard.min.js"></script>
+    <script>
+        var keyboard = new GAMEKBD.Keyboard();
+        var consoleElement = document.getElementById('console');
+
+        setInterval(function(){
+            for (var key in GAMEKBD.Keys)
+            {
+                if (keyboard.isKeyPressed(GAMEKBD.Keys[key]))
+                {
+                    consoleElement.innerHTML += key + " pressed <br/>";
+                }
+                if (keyboard.isKeyReleased(GAMEKBD.Keys[key]))
+                {
+                    consoleElement.innerHTML += key + " released <br/>";
+                }
+            }
+
+            keyboard.update();
+        }, 20);
+    </script>
+</body>
+</html>

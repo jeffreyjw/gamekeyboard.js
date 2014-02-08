@@ -2,23 +2,19 @@ describe('gamekeyboard.js', function() {
 
     var keyboard = new GAMEKBD.Keyboard();
 
-    setInterval(function(){
-
-        if (keyboard.isKeyPressed(GAMEKBD.Keys.KEY_A))
-        {
-            console.log("pressed");
-        }
-
-        if (keyboard.isKeyReleased(GAMEKBD.Keys.KEY_A))
-        {
-            console.log("released");
-        }
-
-        keyboard.update();
-    }, 20)
-
-    it('should be true', function(){
-        expect(true).toBe(true);
+    it('should be equal', function(){
+        expect(keyboard.map).toEqual(keyboard.mapOld);
     });
-  
+
+    it('should not be equal', function(){
+        var evt = document.createEvent("KeyboardEvent");
+        evt.initKeyboardEvent("keydown", true, true, null, false, false, false, false, 0, 0);
+        document.dispatchEvent(evt);
+        expect(keyboard.map).toNotEqual(keyboard.mapOld);
+    });
+
+    it('should be equal again', function(){
+        keyboard.update();
+        expect(keyboard.map).toEqual(keyboard.mapOld);
+    });
 });
