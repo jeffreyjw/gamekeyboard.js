@@ -20,10 +20,10 @@ class GAMEKBD.Keyboard
     map[code] = false
 
   isKeyUp: (keyCode) ->
-    return map[keyCode]
+    return !map[keyCode]
 
   isKeyDown: (keyCode) ->
-    return !map[keyCode]
+    return map[keyCode]
 
   # was the key pressed in this frame
   isKeyPressed: (keyCode) ->

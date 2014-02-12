@@ -42,11 +42,11 @@ GAMEKBD.Keyboard = (function() {
   };
 
   Keyboard.prototype.isKeyUp = function(keyCode) {
-    return map[keyCode];
+    return !map[keyCode];
   };
 
   Keyboard.prototype.isKeyDown = function(keyCode) {
-    return !map[keyCode];
+    return map[keyCode];
   };
 
   Keyboard.prototype.isKeyPressed = function(keyCode) {
