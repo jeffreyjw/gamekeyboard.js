@@ -63,5 +63,22 @@ GAMEKBD.Keys = {
   KEY_NUM_6: 102,
   KEY_NUM_7: 103,
   KEY_NUM_8: 104,
-  KEY_NUM_9: 105
+  KEY_NUM_9: 105,
+  MULTIPLY: 106,
+  ADD: 107,
+  SUBTRACT: 109,
+  DECIMAL_POINT: 110,
+  DIVIDE: 111,
+  F1: 112,
+  F2: 113,
+  F3: 114,
+  F4: 115,
+  F5: 116,
+  F6: 117,
+  F7: 118,
+  F8: 119,
+  F9: 120,
+  F10: 121,
+  F11: 122,
+  F12: 123
 };
