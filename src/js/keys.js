@@ -7,6 +7,7 @@ GAMEKBD.Keys = {
   PAUSE: 18,
   CAPS_LOCK: 20,
   ESCAPE: 27,
+  SPACE: 32,
   PAGE_UP: 33,
   PAGE_DOWN: 34,
   END: 35,
@@ -52,5 +53,15 @@ GAMEKBD.Keys = {
   KEY_W: 87,
   KEY_X: 88,
   KEY_Y: 89,
-  KEY_Z: 90
+  KEY_Z: 90,
+  KEY_NUM_0: 96,
+  KEY_NUM_1: 97,
+  KEY_NUM_2: 98,
+  KEY_NUM_3: 99,
+  KEY_NUM_4: 100,
+  KEY_NUM_5: 101,
+  KEY_NUM_6: 102,
+  KEY_NUM_7: 103,
+  KEY_NUM_8: 104,
+  KEY_NUM_9: 105
 };

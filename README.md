@@ -19,10 +19,10 @@ You can also test the library in tests/test0/index.html
 
 ### How to use
 
-First, instantiate a Keyboard:
+First, get a Keyboard instance:
 
 ```javascript
-var keyboard = new GAMEKBD.Keyboard();
+var keyboard = GAMEKBD.Keyboard.get();
 ```
 
 Then, in your game loop, add an update call - it should be called once per frame
