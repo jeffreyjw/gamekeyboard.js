@@ -1,34 +1,45 @@
+"use strict"
+
 class GAMEKBD.Keyboard
 
-  map = (false for i in [0..200])
-  mapOld = (false for i in [0..200])
+  instance = null
 
-  constructor: () ->
-    document.addEventListener("keydown", this._handleKeyDown, false)
-    document.addEventListener("keyup", this._handleKeyUp, false)
+  class GAMEKBD.KeyboardInput
 
-  update: () ->
-    mapOld = map
-    map = map.slice()
+    map = (false for i in [0..200])
+    mapOld = (false for i in [0..200])
 
-  _handleKeyDown: (e) ->
-    code = e.keyCode
-    map[code] = true
+    constructor: () ->
+      document.addEventListener("keydown", this._handleKeyDown, false)
+      document.addEventListener("keyup", this._handleKeyUp, false)
 
-  _handleKeyUp: (e) ->
-    code = e.keyCode
-    map[code] = false
+    update: () ->
+      mapOld = map
+      map = map.slice()
 
-  isKeyUp: (keyCode) ->
-    return !map[keyCode]
+    _handleKeyDown: (e) ->
+      code = e.keyCode
+      map[code] = true
 
-  isKeyDown: (keyCode) ->
-    return map[keyCode]
+    _handleKeyUp: (e) ->
+      code = e.keyCode
+      map[code] = false
 
-  # was the key pressed in this frame
-  isKeyPressed: (keyCode) ->
-    return (!mapOld[keyCode] && map[keyCode])
+    isKeyUp: (keyCode) ->
+      return !map[keyCode]
 
-  # was the key released in this frame
-  isKeyReleased: (keyCode) ->
-    return (mapOld[keyCode] && !map[keyCode])
+    isKeyDown: (keyCode) ->
+      return map[keyCode]
+
+    # was the key pressed in this frame
+    isKeyPressed: (keyCode) ->
+      return (!mapOld[keyCode] && map[keyCode])
+
+    # was the key released in this frame
+    isKeyReleased: (keyCode) ->
+      return (mapOld[keyCode] && !map[keyCode])
+
+  # creates new instance or returns
+  # an already created one
+  @get: () ->
+    instance ?= new GAMEKBD.KeyboardInput()
